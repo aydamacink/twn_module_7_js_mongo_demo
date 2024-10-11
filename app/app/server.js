@@ -39,7 +39,7 @@ app.get("/get-profile", function (req, res) {
   let response = {};
   // Connect to the db using local application or docker compose variable in connection properties
   MongoClient.connect(
-    mongoUrlDockerCompose,
+    mongoUrlLocal,
     mongoClientOptions,
     function (err, client) {
       if (err) throw err;
@@ -64,7 +64,7 @@ app.post("/update-profile", function (req, res) {
   let userObj = req.body;
   // Connect to the db using local application or docker compose variable in connection properties
   MongoClient.connect(
-    mongoUrlDockerCompose,
+    mongoUrlLocal,
     mongoClientOptions,
     function (err, client) {
       if (err) throw err;
